@@ -1,0 +1,19 @@
+# Build output
+cmake-build-*/
+build/
+out/
+*.o
+*.obj
+*.exe
+*.out
+*.dSYM/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# IDE and OS local files
+.idea/
+.DS_Store
