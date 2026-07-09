@@ -16,26 +16,31 @@ cout << k;
 
 ```
 # Read i
+
+# Get i's memory address.
+# rax now holds the location where i is stored, not i's value.
 leaq -12(%rbp), %rax
+
+# Put i's address where cin expects the input destination.
+# rsi now also holds the address of i.
 movq %rax, %rsi
+
+# Read user input and store it into the address in rsi.
+# Since rsi holds i's address, this writes the input into i.
 call cin
+
 
 # Read j
+
+# Get j's memory address.
+# rax now holds the location where j is stored, not j's value.
 leaq -8(%rbp), %rax
+
+# Put j's address where cin expects the input destination.
+# rsi now also holds the address of j.
 movq %rax, %rsi
+
+# Read user input and store it into the address in rsi.
+# Since rsi holds j's address, this writes the input into j.
 call cin
-
-# Compute k = i - j
-movl -12(%rbp), %edx
-movl -8(%rbp), %eax
-subl %eax, %edx
-
-# Store result into k
-movl %edx, %eax
-movl %eax, -4(%rbp)
-
-# Print k
-movl -4(%rbp), %eax
-movl %eax, %esi
-call cout
 ```
