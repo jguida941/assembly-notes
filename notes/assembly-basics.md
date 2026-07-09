@@ -10,6 +10,9 @@ cin >> i >> j;
 k = i - j;
 
 cout << k;
+```
+
+## Assembly
 
 
 # Read i
