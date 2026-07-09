@@ -32,18 +32,21 @@ cout << result;
 movl $10, -16(%rbp)
 
 # Store the value 4 into b's memory slot.
-# b lives in -12(%rbp)
+# b lives at -12(%rbp).
 movl $4, -12(%rbp)
 
 # Store the value 2 into c's memory slot.
 movl $2, -8(%rbp)
 
-# movl -16(%rbp) which is a and holds 10, to the eax %register
-# eax now holds 10
+
+# Copy a's value into eax.
+# a lives at -16(%rbp), and a currently equals 10.
+# eax now holds 10.
 movl -16(%rbp), %eax
 
-# movl -12(%rbp) which is b and holds 4, to the edx %register
-# edx now holds 4 
+# Copy b's value into edx.
+# b lives at -12(%rbp), and b currently equals 4.
+# edx now holds 4.
 movl -12(%rbp), %edx
 
 # Add edx into eax.
@@ -51,8 +54,9 @@ movl -12(%rbp), %edx
 # Since eax = 10 and edx = 4, eax now holds 14.
 addl %edx, %eax
 
-# Move C which holds value 2 to edx register
-# edx now holds 2
+# Copy c's value into edx.
+# c lives at -8(%rbp), and c currently equals 2.
+# edx now holds 2.
 movl -8(%rbp), %edx
 
 # Subtract edx from eax.
@@ -67,13 +71,41 @@ subl %edx, %eax
 # result lives at -4(%rbp), so result now equals 12.
 movl %eax, -4(%rbp)
 
+# Copy result's value from -4(%rbp) into eax.
+# result currently equals 12, so eax now holds 12.
 movl -4(%rbp), %eax
+
+# Copy eax into esi.
+# eax currently holds 12.
+# esi now holds 12.
+# cout uses esi as the value to print.
 movl %eax, %esi
+
+# Set eax to 0 for this function-call pattern.
+# This is not part of the math.
+# This does not erase result.
+# result is still 12 in memory at -4(%rbp).
+# esi still holds 12 for cout to print.
+# Still a little confused here need to study the WHY here.
 movl $0, %eax
+
+# Print the value in esi.
 call cout
 ```
 
 
+## Assembly Summary
+
+```asm
+eax = a = 10
+edx = b = 4
+eax = eax + edx = 14
+edx = c = 2
+eax = eax - edx = 12
+result = eax = 12
+esi = result = 12
+cout prints 12
+```
 
 ## Expected Output
 
