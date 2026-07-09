@@ -14,15 +14,15 @@ cout << k;
 
 ## Assembly
 
-
 ```
 # Read i
 
 # Get i's memory address.
 # rax now holds the location where i is stored, not i's value.
+# leaq is the instruction that gets the memory address.
 leaq -12(%rbp), %rax
 
-# Put i's address where cin expects the input destination.
+# Put i's address where cin expects the input destination: %rsi.
 # rsi now also holds the address of i.
 movq %rax, %rsi
 
@@ -35,9 +35,10 @@ call cin
 
 # Get j's memory address.
 # rax now holds the location where j is stored, not j's value.
+# leaq is the instruction that gets the memory address.
 leaq -8(%rbp), %rax
 
-# Put j's address where cin expects the input destination.
+# Put j's address where cin expects the input destination: %rsi.
 # rsi now also holds the address of j.
 movq %rax, %rsi
 
@@ -45,3 +46,4 @@ movq %rax, %rsi
 # Since rsi holds j's address, this writes the input into j.
 call cin
 ```
+
