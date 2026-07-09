@@ -1,3 +1,13 @@
+# Assembly Notes: Add and Subtract Practice
+
+## Table of Contents
+
+- [C++ Code](#c-code)
+- [Variable Layout](#variable-layout)
+- [Assembly To Break Down](#assembly-to-break-down)
+- [Assembly Summary](#assembly-summary)
+- [Expected Output](#expected-output)
+
 ## C++ Code
 
 ```cpp

@@ -11,6 +11,21 @@ The main things I care about:
 - Array indexes start at 0.
 - In this class example, the array elements are stored near `%rbp`.
 
+## Table of Contents
+
+- [1. Big Idea](#1-big-idea)
+- [2. C++ Code](#2-c-code)
+- [3. Variable Layout](#3-variable-layout)
+- [4. Assembly](#4-assembly)
+- [5. Line-by-Line Breakdown](#5-line-by-line-breakdown)
+- [6. Memory Picture](#6-memory-picture)
+- [7. Why the Slots Move by 4](#7-why-the-slots-move-by-4)
+- [8. Array Indexes](#8-array-indexes)
+- [9. Array vs Separate Variables](#9-array-vs-separate-variables)
+- [10. Important Pattern](#10-important-pattern)
+- [11. What to Remember](#11-what-to-remember)
+- [12. Main Summary](#12-main-summary)
+
 ## 1. Big Idea
 
 An array is one variable that holds multiple values.

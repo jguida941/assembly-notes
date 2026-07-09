@@ -1,6 +1,11 @@
-# Assembly Notes: Read Two Integers, Subtract, Print Result
+# Assembly Notes: Reading Two Integers With `cin`
 
 **Note:** I rewrote the example in my own words so each assembly instruction explains whether it is working with an address or a value.
+
+## Table of Contents
+
+- [C++ Code](#c-code)
+- [Assembly](#assembly)
 
 ## C++ Code
 

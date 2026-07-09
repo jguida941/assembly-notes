@@ -8,6 +8,9 @@ out/
 *.out
 *.dSYM/
 
+# Compiled lesson executable
+lesson-01-cpp-to-assembly/main
+
 # CMake generated files
 CMakeFiles/
 CMakeCache.txt

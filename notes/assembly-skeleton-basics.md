@@ -8,7 +8,19 @@ The main things I care about:
 - Is the instruction using **memory** or a **register**?
 - Is this line part of the fixed skeleton or the actual program logic?
 
----
+## Table of Contents
+
+- [1. Key Rules](#1-key-rules)
+- [2. Skeleton Code](#2-skeleton-code)
+- [3. Integer Variable Assignment](#3-integer-variable-assignment)
+- [4. Adding Two Integers](#4-adding-two-integers)
+- [5. Reading One Integer and Printing It](#5-reading-one-integer-and-printing-it)
+- [6. Read Two Integers, Subtract, Print Result](#6-read-two-integers-subtract-print-result)
+- [7. Printing Strings](#7-printing-strings)
+- [8. Printing Two Strings](#8-printing-two-strings)
+- [9. What I Should Not Overthink](#9-what-i-should-not-overthink)
+- [10. Final Cheat Sheet](#10-final-cheat-sheet)
+
 
 # 1. Key Rules
 
@@ -49,7 +61,7 @@ leaq gets an address.
 movl gets or stores a value.
 ```
 
----
+
 
 ## Registers
 
@@ -77,7 +89,7 @@ eax, edx, esi = usually integer values
 rax, rsi, rdi = usually addresses or 64-bit values
 ```
 
----
+
 
 ## `mov` Means Copy
 
@@ -99,7 +111,6 @@ esi = eax
 
 After this, both can hold the same value.
 
----
 
 ## AT&T Syntax Order
 
@@ -135,7 +146,7 @@ Means:
 edx = edx - eax
 ```
 
----
+
 
 # 2. Skeleton Code
 
@@ -157,7 +168,6 @@ My code handles:
 - doing math
 - printing output
 
----
 
 ## Example C++ Code
 
@@ -172,7 +182,7 @@ int main()
 }
 ```
 
----
+
 
 ## Full Assembly Skeleton
 
@@ -206,7 +216,7 @@ ret
 .section .note.GNU-stack,"",@progbits
 ```
 
----
+
 
 ## What I Actually Need to Understand
 
@@ -228,7 +238,7 @@ Plain English:
 i = 12
 ```
 
----
+
 
 ## Skeleton Lines Explained
 
@@ -289,7 +299,7 @@ Function cleanup and return.
 
 For this course, I usually do not edit these unless instructed.
 
----
+
 
 # 3. Integer Variable Assignment
 
@@ -316,7 +326,7 @@ Memory:
 -4(%rbp) = i = 12
 ```
 
----
+
 
 ## Two Integers
 
@@ -374,7 +384,6 @@ k = i + j;
 cout << k;
 ```
 
----
 
 ## Assembly
 
@@ -423,7 +432,7 @@ movl $0, %eax
 call cout
 ```
 
----
+
 
 ## Memory Layout
 
@@ -433,7 +442,7 @@ call cout
 -4(%rbp)  = k = 5
 ```
 
----
+
 
 ## Important Addition Rule
 
@@ -469,7 +478,7 @@ That is why this line stores only `eax` into `k`:
 movl %eax, -4(%rbp)
 ```
 
----
+
 
 # 5. Reading One Integer and Printing It
 
@@ -483,7 +492,7 @@ cin >> i;
 cout << i;
 ```
 
----
+
 
 ## Assembly
 
@@ -513,7 +522,7 @@ movl %eax, %esi
 call cout
 ```
 
----
+
 
 ## Key Rule
 
@@ -546,7 +555,7 @@ Means:
 eax = value of i
 ```
 
----
+
 
 # 6. Read Two Integers, Subtract, Print Result
 
@@ -562,7 +571,6 @@ k = i - j;
 cout << k;
 ```
 
----
 
 ## Assembly
 
@@ -636,7 +644,6 @@ movl %eax, %esi
 call cout
 ```
 
----
 
 ## Memory Layout
 
@@ -688,7 +695,7 @@ edx = 10 - 3
 edx = 7
 ```
 
----
+
 
 # 7. Printing Strings
 
@@ -705,7 +712,7 @@ int main()
 }
 ```
 
----
+
 
 ## Assembly
 
@@ -745,7 +752,7 @@ ret
 .section .note.GNU-stack,"",@progbits
 ```
 
----
+
 
 ## String Storage
 
@@ -798,7 +805,6 @@ Means:
 Create a string named .LC0 that contains "Hello World".
 ```
 
----
 
 ## Printing the String
 
@@ -839,7 +845,7 @@ Plain English:
 Print "Hello World".
 ```
 
----
+
 
 # 8. Printing Two Strings
 
@@ -857,7 +863,7 @@ int main()
 }
 ```
 
----
+
 
 ## Assembly
 
@@ -902,7 +908,7 @@ ret
 .section .note.GNU-stack,"",@progbits
 ```
 
----
+
 
 ## String Labels
 
@@ -928,7 +934,7 @@ Creates the second string.
 .LC1 = "I am here..."
 ```
 
----
+
 
 ## Print First String
 
@@ -947,7 +953,7 @@ Plain English:
 Print "Hello World".
 ```
 
----
+
 
 ## Print Second String
 
@@ -966,7 +972,6 @@ Plain English:
 Print "I am here...".
 ```
 
----
 
 # 9. What I Should Not Overthink
 
@@ -1006,7 +1011,7 @@ movl %eax, %esi
 call cout
 ```
 
----
+
 
 # 10. Final Cheat Sheet
 
@@ -1037,7 +1042,7 @@ Means:
 Store 12 into the first local int slot.
 ```
 
----
+
 
 ## Strings
 
@@ -1059,7 +1064,7 @@ Means:
 Create a string named .LC0 containing "Hello World".
 ```
 
----
+
 
 ## Printing Strings
 
@@ -1075,7 +1080,7 @@ Put the string address into edi.
 Call puts to print it.
 ```
 
----
+
 
 ## Input vs Output
 
@@ -1116,7 +1121,7 @@ Put i's value where cout expects it.
 cout prints i.
 ```
 
----
+
 
 ## Math Pattern
 
@@ -1144,9 +1149,9 @@ Means:
 edx = edx - eax
 ```
 
----
 
-# Main Summary
+
+## Main Summary
 
 ```text
 Integer variables use stack slots like -4(%rbp).
