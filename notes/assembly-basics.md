@@ -14,7 +14,7 @@ cout << k;
 
 ## Assembly
 
-
+```
 # Read i
 leaq -12(%rbp), %rax
 movq %rax, %rsi
@@ -38,3 +38,4 @@ movl %eax, -4(%rbp)
 movl -4(%rbp), %eax
 movl %eax, %esi
 call cout
+```
