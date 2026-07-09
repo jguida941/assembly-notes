@@ -33,24 +33,33 @@ movl $10, -16(%rbp)
 
 # Store the value 4 into b's memory slot.
 # b lives in -12(%rbp)
-movl $4, -12(%rbp
+movl $4, -12(%rbp)
 
 # Store the value 2 into c's memory slot.
 movl $2, -8(%rbp)
 
 # movl -16(%rbp) which is a and holds 10, to the eax %register
+# eax now holds 10
 movl -16(%rbp), %eax
 
 # movl -12(%rbp) which is b and holds 4, to the edx %register
+# edx now holds 4 
 movl -12(%rbp), %edx
 
- # Add 10 + 4 
+# Add edx into eax.
+# eax = eax + edx.
+# Since eax = 10 and edx = 4, eax now holds 14.
 addl %edx, %eax
 
-# Move C which holds value 4 to edx register
+# Move C which holds value 2 to edx register
+# edx now holds 2
 movl -8(%rbp), %edx
 
-# Subtract 
+# Subtract edx from eax.
+# eax = eax - edx.
+# Since eax is now 14 and edx = 4.
+# eax = 14 - 4
+# eax = 10
 subl %edx, %eax
 
 movl %eax, -4(%rbp)
