@@ -1,6 +1,7 @@
 # Assembly Notes: Arrays Basics
 
 I rewrote this section in my own words so each array instruction explains what it is doing.
+Seperating concept from the Syntax.
 
 The main things I care about:
 
