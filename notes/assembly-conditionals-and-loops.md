@@ -947,7 +947,7 @@ The loop runs like this:
 i = 0 → print 0 → i becomes 1
 i = 1 → print 1 → i becomes 2
 i = 2 → print 2 → i becomes 3
-i = 3 → prins 4
+i = 3 → print 3 → i becomes 4
 i = 4 → print 4 → i becomes 5
 i = 5 → print 5 → i becomes 6
 i = 6 → print 6 → i becomes 7
