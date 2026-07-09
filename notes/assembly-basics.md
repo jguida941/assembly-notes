@@ -1,6 +1,6 @@
 # Assembly Notes: Read Two Integers, Subtract, Print Result
 
-- I rewrote the example in my own words so each assembly instruction explains whether it is working with an address or a value.
+**Note:** I rewrote the example in my own words so each assembly instruction explains whether it is working with an address or a value.
 
 ## C++ Code
 
