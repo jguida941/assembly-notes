@@ -16,6 +16,7 @@ then break that assembly down line by line.
   - [assembly-basics.md](#assembly-basicsmd)
   - [assembly-practice-add-subtract.md](#assembly-practice-add-subtractmd)
   - [assembly-arrays-basics.md](#assembly-arrays-basicsmd)
+  - [assembly-conditionals-and-loops.md](#assembly-conditionals-and-loopsmd)
 - [Recurring Ideas](#recurring-ideas)
 
 ## How to Read These Notes
@@ -40,6 +41,8 @@ values while the program does arithmetic.
    a worked `a + b - c` example.
 4. **[assembly-arrays-basics.md](assembly-arrays-basics.md)** — how arrays sit
    in memory.
+5. **[assembly-conditionals-and-loops.md](assembly-conditionals-and-loops.md)** —
+   `if`/`else` and `for` loops as compares, jumps, and labels.
 
 ## The Notes
 
@@ -83,6 +86,17 @@ How a small `int` array is laid out in memory.
 - Indexes start at 0 (`values[0]`, `values[1]`, `values[2]`)
 - A memory picture of the array
 - How arrays compare to separate variables
+
+### [assembly-conditionals-and-loops.md](assembly-conditionals-and-loops.md)
+
+How `if`/`else` and `for` loops are built from comparisons, jumps, and labels.
+
+- Relational operators and their assembly jumps (`je`, `jg`, `jl`, `jge`, `jle`, `jne`)
+- `cmp` sets up the comparison; the jump acts on it
+- A full `if`/`else` example, including why the compiler tests the *opposite* condition
+- Labels like `.L2` / `.L3` as jump targets
+- A `for` loop broken down: init, condition-first jump, body, increment, re-check
+- A step-by-step state walkthrough of the loop counter
 
 ## Recurring Ideas
 

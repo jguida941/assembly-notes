@@ -38,7 +38,8 @@ assembly-notes/
     ├── assembly-skeleton-basics.md # Core reference: skeleton, variables, strings, I/O, math
     ├── assembly-basics.md          # Reading integers with cin
     ├── assembly-practice-add-subtract.md  # Worked a + b - c example
-    └── assembly-arrays-basics.md   # How arrays sit in memory
+    ├── assembly-arrays-basics.md   # How arrays sit in memory
+    └── assembly-conditionals-and-loops.md  # if/else and for loops
 ```
 
 ## Conventions
@@ -63,6 +64,7 @@ reading order. In short:
 | [assembly-basics.md](notes/assembly-basics.md) | Reading integers from input with `cin` and `leaq` |
 | [assembly-practice-add-subtract.md](notes/assembly-practice-add-subtract.md) | A complete worked `result = a + b - c` example |
 | [assembly-arrays-basics.md](notes/assembly-arrays-basics.md) | How a small `int` array is laid out in memory |
+| [assembly-conditionals-and-loops.md](notes/assembly-conditionals-and-loops.md) | `if`/`else` and `for` loops as compares, jumps, and labels |
 
 ## Lesson 01: C++ to Assembly
 
