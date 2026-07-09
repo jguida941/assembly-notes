@@ -10,7 +10,7 @@ The main things I care about:
 - Array indexes start at 0.
 - In this class example, the array elements are stored near `%rbp`.
 
-# 1. Big Idea
+## 1. Big Idea
 
 An array is one variable that holds multiple values.
 
@@ -33,7 +33,7 @@ Each one is an `int`.
 Since an `int` takes 4 bytes, each array element is 4 bytes apart in memory.
 
 
-# 2. C++ Code
+## 2. C++ Code
 
 ```cpp
 int values[3];
@@ -54,7 +54,7 @@ Put 30 in the third spot.
 ```
 
 
-# 3. Variable Layout
+## 3. Variable Layout
 
 For this example, the array uses these stack slots:
 
@@ -72,7 +72,7 @@ values[1] = -12(%rbp)
 values[2] = -8(%rbp)
 ```
 
-# 4. Assembly
+## 4. Assembly
 
 ```asm
 # Store the value 10 into the first array element.
@@ -88,7 +88,7 @@ movl $20, -12(%rbp)
 movl $30, -8(%rbp)
 ```
 
-# 5. Line-by-Line Breakdown
+## 5. Line-by-Line Breakdown
 
 ```asm
 movl $10, -16(%rbp)
@@ -145,7 +145,7 @@ In this layout, values[2] lives at -8(%rbp).
 ```
 
 
-# 6. Memory Picture
+## 6. Memory Picture
 
 ```text
 Address Slot     Array Element     Value
@@ -163,7 +163,7 @@ values[1]  →  20
 values[2]  →  30
 ```
 
-# 7. Why the Slots Move by 4
+## 7. Why the Slots Move by 4
 
 Each `int` takes 4 bytes.
 
@@ -190,7 +190,7 @@ movl $20, -12(%rbp)
 movl $30, -8(%rbp)
 ```
 
-# 8. Array Indexes
+## 8. Array Indexes
 
 Array indexes start at 0.
 
@@ -248,7 +248,7 @@ means:
 Put 30 in the third array slot.
 ```
 
-# 9. Array vs Separate Variables
+## 9. Array vs Separate Variables
 
 Separate variables:
 
@@ -288,9 +288,7 @@ a, b, c are separate variables.
 values[0], values[1], and values[2] are elements inside one array.
 ```
 
----
-
-# 10. Important Pattern
+## 10. Important Pattern
 
 For this class-level example:
 
