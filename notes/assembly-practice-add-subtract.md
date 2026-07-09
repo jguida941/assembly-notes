@@ -44,10 +44,13 @@ movl -16(%rbp), %eax
 # movl -12(%rbp) which is b and holds 4, to the edx %register
 movl -12(%rbp), %edx
 
-
+ # Add 10 + 4 
 addl %edx, %eax
 
+# Move C which holds value 4 to edx register
 movl -8(%rbp), %edx
+
+# Subtract 
 subl %edx, %eax
 
 movl %eax, -4(%rbp)
