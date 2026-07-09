@@ -35,11 +35,16 @@ movl $10, -16(%rbp)
 # b lives in -12(%rbp)
 movl $4, -12(%rbp
 
-# Move the value 2 into  c's memory slot.
+# Store the value 2 into c's memory slot.
 movl $2, -8(%rbp)
 
+# movl -16(%rbp) which is a and holds 10, to the eax %register
 movl -16(%rbp), %eax
+
+# movl -12(%rbp) which is b and holds 4, to the edx %register
 movl -12(%rbp), %edx
+
+
 addl %edx, %eax
 
 movl -8(%rbp), %edx
