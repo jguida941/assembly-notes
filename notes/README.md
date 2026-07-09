@@ -17,6 +17,7 @@ then break that assembly down line by line.
   - [assembly-practice-add-subtract.md](#assembly-practice-add-subtractmd)
   - [assembly-arrays-basics.md](#assembly-arrays-basicsmd)
   - [assembly-conditionals-and-loops.md](#assembly-conditionals-and-loopsmd)
+  - [assembly-generate-reverse-and-security.md](#assembly-generate-reverse-and-securitymd)
 - [Recurring Ideas](#recurring-ideas)
 
 ## How to Read These Notes
@@ -43,6 +44,9 @@ values while the program does arithmetic.
    in memory.
 5. **[assembly-conditionals-and-loops.md](assembly-conditionals-and-loops.md)** —
    `if`/`else` and `for` loops as compares, jumps, and labels.
+6. **[assembly-generate-reverse-and-security.md](assembly-generate-reverse-and-security.md)** —
+   generating assembly with `g++ -S`, reversing assembly back to C++, and code
+   security.
 
 ## The Notes
 
@@ -97,6 +101,20 @@ How `if`/`else` and `for` loops are built from comparisons, jumps, and labels.
 - Labels like `.L2` / `.L3` as jump targets
 - A `for` loop broken down: init, condition-first jump, body, increment, re-check
 - A step-by-step state walkthrough of the loop counter
+
+### [assembly-generate-reverse-and-security.md](assembly-generate-reverse-and-security.md)
+
+Going the other direction — producing assembly, reversing it back to C++, and the
+security thinking that surrounds it.
+
+- Generating assembly from C++ with `g++ -S` (`Hello.cpp` → `Hello.s`)
+- Reading generated assembly and separating logic from compiler skeleton
+- Reverse-engineering assembly to C++ by tracking register state line by line
+- Shift/test/conditional-move patterns (`sall`, `sarl`, `testl`, `cmovs`)
+- Common security issues: buffer overflow, uninitialized variables, ignored
+  errors, dangling pointers
+- Secure-coding practices, a checklist, clean-room reverse engineering, and
+  security-by-design / deployment process
 
 ## Recurring Ideas
 

@@ -39,7 +39,8 @@ assembly-notes/
     ├── assembly-basics.md          # Reading integers with cin
     ├── assembly-practice-add-subtract.md  # Worked a + b - c example
     ├── assembly-arrays-basics.md   # How arrays sit in memory
-    └── assembly-conditionals-and-loops.md  # if/else and for loops
+    ├── assembly-conditionals-and-loops.md  # if/else and for loops
+    └── assembly-generate-reverse-and-security.md  # g++ -S, reversing to C++, security
 ```
 
 ## Conventions
@@ -65,6 +66,7 @@ reading order. In short:
 | [assembly-practice-add-subtract.md](notes/assembly-practice-add-subtract.md) | A complete worked `result = a + b - c` example |
 | [assembly-arrays-basics.md](notes/assembly-arrays-basics.md) | How a small `int` array is laid out in memory |
 | [assembly-conditionals-and-loops.md](notes/assembly-conditionals-and-loops.md) | `if`/`else` and `for` loops as compares, jumps, and labels |
+| [assembly-generate-reverse-and-security.md](notes/assembly-generate-reverse-and-security.md) | Generating assembly (`g++ -S`), reversing it to C++, and code security |
 
 ## Lesson 01: C++ to Assembly
 
