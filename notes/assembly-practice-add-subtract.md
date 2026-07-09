@@ -57,11 +57,14 @@ movl -8(%rbp), %edx
 
 # Subtract edx from eax.
 # eax = eax - edx.
-# Since eax is now 14 and edx = 4.
-# eax = 14 - 4
-# eax = 10
+# Since eax = 14 and edx = 2:
+# eax = 14 - 2
+# eax = 12
 subl %edx, %eax
 
+# Store eax into result's memory slot.
+# eax currently holds 12.
+# result lives at -4(%rbp), so result now equals 12.
 movl %eax, -4(%rbp)
 
 movl -4(%rbp), %eax
