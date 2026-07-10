@@ -8,8 +8,8 @@ out/
 *.out
 *.dSYM/
 
-# Compiled lesson executable
-lesson-01-cpp-to-assembly/main
+# Compiled lesson executable (in-place manual build)
+module-1/lesson-01-cpp-to-assembly/src/assignment1_1
 
 # CMake generated files
 CMakeFiles/
