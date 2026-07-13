@@ -50,8 +50,7 @@ assembly-notes/
     └── lesson-02-cpp-to-assembly-with-loops/  # All Module 2 material
         ├── src/
         │   ├── assignment2_1.cpp   # The given factorial program (loop)
-        │   ├── assignment2_1.s     # The assembly generated for it
-        │   └── assignment2_2.cpp   # Cleaned-up version of the same program
+        │   └── assignment2_1.s     # The assembly generated for it
         └── assignment/
             ├── CS 410 C++ to Assembly With Loops Activity Template.docx  # Module 2 assignment
             └── cpp-to-assembly-with-loops-activity.md  # The completed activity, in Markdown
@@ -104,9 +103,6 @@ a compare, a conditional jump, and a backward `jmp` to a label (`.L3` / `.L2`).
   is the program as given, kept **exactly as provided** so the assembly matches it.
 - [`src/assignment2_1.s`](module-2/lesson-02-cpp-to-assembly-with-loops/src/assignment2_1.s)
   is the assembly generated for it (unmodified compiler output).
-- [`src/assignment2_2.cpp`](module-2/lesson-02-cpp-to-assembly-with-loops/src/assignment2_2.cpp)
-  is a cleaned-up version of the same program: consistent spacing, a space before
-  `is:` in the output, and `return 0;` instead of `return 1;`.
 - [`assignment/cpp-to-assembly-with-loops-activity.md`](module-2/lesson-02-cpp-to-assembly-with-loops/assignment/cpp-to-assembly-with-loops-activity.md)
   is the completed activity in Markdown — all four steps, with each C++ line
   aligned to its block of assembly and explained.
@@ -143,13 +139,12 @@ cmake -S . -B build
 cmake --build build
 ```
 
-That produces three executables:
+That produces two executables:
 
 | Executable | Source |
 | --- | --- |
 | `./build/assembly_notes` | Lesson 01 — multiply and print |
-| `./build/assignment2_1` | Lesson 02 — factorial, as given |
-| `./build/assignment2_2` | Lesson 02 — factorial, cleaned up |
+| `./build/assignment2_1` | Lesson 02 — factorial |
 
 ## Requirements
 
