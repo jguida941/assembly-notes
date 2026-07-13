@@ -15,5 +15,5 @@ int main()
 
     cout << "The factorial for " << num << " is:\n" << product;
 
-    return 1;
+    return 0;
 }
