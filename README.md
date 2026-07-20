@@ -22,8 +22,8 @@ with an **address** or a **value**, and whether it touches **memory** or a
 ## Overview
 
 This repo is a personal learning space for understanding how simple C++
-constructs — integer variables, addition and subtraction, input and output,
-arrays, and loops — map down to assembly. Each activity pairs a piece of C++ with
+constructs (integer variables, addition and subtraction, input and output,
+arrays, and loops) map down to assembly. Each activity pairs a piece of C++ with
 its assembly, and the notes break that assembly down line by line.
 
 Folders are named after the course's own activity numbering, so
@@ -36,53 +36,53 @@ submitted document, plus a Markdown copy with the same wording) and a `src/`
 
 ```text
 assembly-notes/
-├── README.md                       # You are here
-├── CMakeLists.txt                  # Build config for the activity programs
+├── README.md                                           # You are here
+├── CMakeLists.txt                                      # Build config for the activity programs
 ├── module-1/
-│   └── 1-2-activity-cpp-to-assembly/   # 1-2 Activity: C++ to Assembly
+│   └── 1-2-activity-cpp-to-assembly/                   # 1-2 Activity: C++ to Assembly
 │       ├── src/
-│       │   ├── assignment1_1.cpp   # A simple C++ program
-│       │   └── assignment1_1.s     # The assembly generated for it
+│       │   ├── assignment1_1.cpp                       # A simple C++ program
+│       │   └── assignment1_1.s                         # The assembly generated for it
 │       ├── assignment/
 │       │   └── CS 410 C++ to Assembly Activity Template.docx
 │       └── notes/
-│           ├── README.md                   # Index of the study notes
-│           ├── assembly-skeleton-basics.md # Core reference: skeleton, variables, strings, I/O, math
-│           ├── assembly-basics.md          # Reading integers with cin
-│           ├── assembly-practice-add-subtract.md  # Worked a + b - c example
-│           ├── assembly-arrays-basics.md   # How arrays sit in memory
-│           ├── assembly-conditionals-and-loops.md  # if/else and for loops
-│           └── assembly-generate-reverse-and-security.md  # g++ -S, reversing to C++, security
-└── module-2/                       # All Module 2 material
-    ├── 2-1-activity-cpp-to-assembly-with-loops/   # 2-1 Activity: C++ to Assembly With Loops
+│           ├── README.md                               # Index of the study notes
+│           ├── assembly-skeleton-basics.md             # Skeleton, variables, I/O, math
+│           ├── assembly-basics.md                      # Reading integers with cin
+│           ├── assembly-practice-add-subtract.md       # Worked a + b - c example
+│           ├── assembly-arrays-basics.md               # How arrays sit in memory
+│           ├── assembly-conditionals-and-loops.md      # if/else and for loops
+│           └── assembly-generate-reverse-and-security.md
+└── module-2/
+    ├── 2-1-activity-cpp-to-assembly-with-loops/        # 2-1 Activity: C++ to Assembly With Loops
     │   ├── src/
-    │   │   ├── assignment2_1.cpp   # The given factorial program (loop)
-    │   │   └── assignment2_1.s     # The assembly generated for it
+    │   │   ├── assignment2_1.cpp                       # The given factorial program
+    │   │   └── assignment2_1.s                         # The assembly generated for it
     │   └── assignment/
     │       ├── CS 410 C++ to Assembly With Loops Activity Template.docx
-    │       └── cpp-to-assembly-with-loops-activity.md  # The completed activity, in Markdown
-    └── 2-2-activity-assembly-to-cpp/             # 2-2 Activity: Assembly to C++
+    │       └── cpp-to-assembly-with-loops-activity.md  # Same wording, in Markdown
+    └── 2-2-activity-assembly-to-cpp/                   # 2-2 Activity: Assembly to C++
         ├── src/
-        │   ├── assignment2_2_1.s   # The given assembly, block 1
-        │   ├── assignment2_2_1.cpp # The C++ it converts to, commented line by line
-        │   ├── assignment2_2_2.s   # The given assembly, block 2
-        │   ├── assignment2_2_2.cpp # The C++ it converts to, commented line by line
-        │   ├── assignment2_2_3.s   # The given assembly, block 3
-        │   └── assignment2_2_3.cpp # The C++ it converts to, commented line by line
+        │   ├── assignment2_2_1.s                       # Given assembly, block 1
+        │   ├── assignment2_2_1.cpp                     # The C++ it converts to
+        │   ├── assignment2_2_2.s                       # Given assembly, block 2
+        │   ├── assignment2_2_2.cpp                     # The C++ it converts to
+        │   ├── assignment2_2_3.s                       # Given assembly, block 3
+        │   └── assignment2_2_3.cpp                     # The C++ it converts to
         └── assignment/
             ├── CS 410 Assembly to C++ Activity Template.docx
-            └── assembly-to-cpp-activity.md  # The same activity, word for word, in Markdown
+            └── assembly-to-cpp-activity.md             # Same wording, in Markdown
 ```
 
 ## Conventions
 
 - **Architecture / syntax:** x86-64, GNU / AT&T assembly.
-- **Operand order:** source first, destination second — `movl $2, -12(%rbp)`
+- **Operand order:** source first, destination second, so `movl $2, -12(%rbp)`
   stores `2` into the slot.
 - **Local variables** live in **stack slots** written as negative offsets from
   the frame pointer, e.g. `-4(%rbp)`. Each `int` is 4 bytes.
 - **Registers** such as `%eax` and `%edx` hold values while arithmetic happens.
-- **`mov` means copy**, not move — the source is left unchanged.
+- **`mov` means copy**, not move. The source is left unchanged.
 
 ## Notes
 
@@ -122,10 +122,10 @@ a compare, a conditional jump, and a backward `jmp` to a label (`.L3` / `.L2`).
 - [`src/assignment2_1.s`](module-2/2-1-activity-cpp-to-assembly-with-loops/src/assignment2_1.s)
   is the assembly generated for it (unmodified compiler output).
 - [`assignment/cpp-to-assembly-with-loops-activity.md`](module-2/2-1-activity-cpp-to-assembly-with-loops/assignment/cpp-to-assembly-with-loops-activity.md)
-  is the completed activity in Markdown — all four steps, with each C++ line
+  is the completed activity in Markdown: all four steps, with each C++ line
   aligned to its block of assembly and explained.
 
-**On `return 1;`** — the value returned from `main` becomes the program's exit
+**On `return 1;`**. The value returned from `main` becomes the program's exit
 status. By convention `0` means success and any nonzero value means failure, so
 the given program reports failure even though it completes normally. It shows up
 in the assembly as a single instruction, `movl $1, %eax`, right before `ret`.
@@ -136,18 +136,18 @@ Module 2's second assignment, and the reverse of the first two activities: inste
 compiling C++ down to assembly, this one starts from three blocks of assembly and
 works back up to the C++ that would produce them.
 
-All three blocks share the same shape — read an `int` from the stack slot
-`-8(%rbp)`, do arithmetic in registers, store the result into `-4(%rbp)` — so
-each one reduces to a single assignment statement.
+All three blocks share the same shape. Each reads an `int` from the stack slot
+`-8(%rbp)`, does arithmetic in registers, and stores the result into `-4(%rbp)`,
+so each one reduces to a single assignment statement.
 
 - [`assignment/CS 410 Assembly to C++ Activity Template.docx`](module-2/2-2-activity-assembly-to-cpp/assignment/CS%20410%20Assembly%20to%20C++%20Activity%20Template.docx)
   is the completed activity as submitted.
 - [`assignment/assembly-to-cpp-activity.md`](module-2/2-2-activity-assembly-to-cpp/assignment/assembly-to-cpp-activity.md)
-  is that same document, word for word, in Markdown — every instruction with its
-  C++ line and explanation.
+  is that same document, word for word, in Markdown, with every instruction next
+  to its C++ line and explanation.
 - [`src/`](module-2/2-2-activity-assembly-to-cpp/src) has a **pair** of files per
   block, the mirror image of how the other two activities are laid out. There the
-  `.cpp` came first and the `.s` was generated from it; here the `.s` is what was
+  `.cpp` came first and the `.s` was generated from it. Here the `.s` is what was
   given and the `.cpp` is what it converts back to.
 
 | Block | Given assembly | Converted C++ | Reduces to |
@@ -156,14 +156,14 @@ each one reduces to a single assignment statement.
 | 2 | [`assignment2_2_2.s`](module-2/2-2-activity-assembly-to-cpp/src/assignment2_2_2.s) | [`assignment2_2_2.cpp`](module-2/2-2-activity-assembly-to-cpp/src/assignment2_2_2.cpp) | `y = ((x * 4) - 1) / 8;` |
 | 3 | [`assignment2_2_3.s`](module-2/2-2-activity-assembly-to-cpp/src/assignment2_2_3.s) | [`assignment2_2_3.cpp`](module-2/2-2-activity-assembly-to-cpp/src/assignment2_2_3.cpp) | `y = (x / 8) + (x * 4);` |
 
-Each `.cpp` is runnable: it keeps every assembly step as its own C++ line with the
+Each `.cpp` is runnable. It keeps every assembly step as its own C++ line with the
 matching instruction in a trailing comment, then states the one-line form the
-whole block reduces to. The `.s` files are the assembly exactly as given in the
-activity — they are reference material, not something that assembles on its own,
+whole block reduces to. The `.s` files hold the assembly exactly as the activity
+gave it. They are reference material, not something that assembles on its own,
 since the blocks have no function skeleton around them.
 
 The `sall` / `sarl` shifts and the `leal` + `testl` + `cmovs` sequence are the
-things to work out here. That last sequence is signed division by 8: `sarl`
+things to work out here. That last sequence is signed division by 8. `sarl`
 alone rounds toward negative infinity, but C++ integer division rounds toward
 zero, so the compiler adds 7 to a copy and uses that copy only when the value is
 negative. See
@@ -201,11 +201,11 @@ That produces five executables:
 
 | Executable | Source |
 | --- | --- |
-| `./build/assembly_notes` | 1-2 Activity — multiply and print |
-| `./build/assignment2_1` | 2-1 Activity — factorial |
-| `./build/assignment2_2_1` | 2-2 Activity — block 1 |
-| `./build/assignment2_2_2` | 2-2 Activity — block 2 |
-| `./build/assignment2_2_3` | 2-2 Activity — block 3 |
+| `./build/assembly_notes` | 1-2 Activity, multiply and print |
+| `./build/assignment2_1` | 2-1 Activity, factorial |
+| `./build/assignment2_2_1` | 2-2 Activity, block 1 |
+| `./build/assignment2_2_2` | 2-2 Activity, block 2 |
+| `./build/assignment2_2_3` | 2-2 Activity, block 3 |
 
 All five targets build and run.
 

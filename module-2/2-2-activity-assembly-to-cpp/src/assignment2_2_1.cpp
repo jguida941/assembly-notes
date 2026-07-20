@@ -1,7 +1,7 @@
 #include <iostream>
 
 /*
- * 2-2 Activity: Assembly to C++ — Block 1
+ * 2-2 Activity: Assembly to C++, Block 1
  *
  * The assembly for this block is in assignment2_2_1.s. It reads one int out of
  * the stack slot -8(%rbp), does arithmetic in registers, and stores the result

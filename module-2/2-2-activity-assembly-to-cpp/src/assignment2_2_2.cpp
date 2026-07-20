@@ -1,12 +1,12 @@
 #include <iostream>
 
 /*
- * 2-2 Activity: Assembly to C++ — Block 2
+ * 2-2 Activity: Assembly to C++, Block 2
  *
- * The assembly for this block is in assignment2_2_2.s. Same shape as Block 1 —
- * read -8(%rbp), do arithmetic, store into -4(%rbp) — but this one ends in the
- * leal / testl / cmovs / sarl sequence, which is how the compiler writes
- * signed integer division by a power of two.
+ * The assembly for this block is in assignment2_2_2.s. Same shape as Block 1:
+ * it reads -8(%rbp), does arithmetic, and stores into -4(%rbp). But this one
+ * ends in the leal / testl / cmovs / sarl sequence, which is how the compiler
+ * writes signed integer division by a power of two.
  *
  * Why that sequence exists: sarl (arithmetic shift right) rounds toward
  * negative infinity, but C++ integer division has to round toward zero. So the

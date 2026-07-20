@@ -1,7 +1,7 @@
 #include <iostream>
 
 /*
- * 2-2 Activity: Assembly to C++ — Block 3
+ * 2-2 Activity: Assembly to C++, Block 3
  *
  * The assembly for this block is in assignment2_2_3.s. This one reads
  * -8(%rbp) twice: once into eax, where it gets divided by 8 using the same
