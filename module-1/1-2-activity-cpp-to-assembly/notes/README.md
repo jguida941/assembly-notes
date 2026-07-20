@@ -34,19 +34,19 @@ values while the program does arithmetic.
 
 ## Suggested Reading Order
 
-1. **[assembly-skeleton-basics.md](assembly-skeleton-basics.md)** — the core
+1. **[assembly-skeleton-basics.md](assembly-skeleton-basics.md)** is the core
    reference. Read this first; the other notes are focused practice on ideas it
    introduces.
-2. **[assembly-basics.md](assembly-basics.md)** — reading integers with `cin`.
-3. **[assembly-practice-add-subtract.md](assembly-practice-add-subtract.md)** —
+2. **[assembly-basics.md](assembly-basics.md)** covers reading integers with `cin`.
+3. **[assembly-practice-add-subtract.md](assembly-practice-add-subtract.md)** is
    a worked `a + b - c` example.
-4. **[assembly-arrays-basics.md](assembly-arrays-basics.md)** — how arrays sit
-   in memory.
-5. **[assembly-conditionals-and-loops.md](assembly-conditionals-and-loops.md)** —
-   `if`/`else` and `for` loops as compares, jumps, and labels.
-6. **[assembly-generate-reverse-and-security.md](assembly-generate-reverse-and-security.md)** —
-   generating assembly with `g++ -S`, reversing assembly back to C++, and code
-   security.
+4. **[assembly-arrays-basics.md](assembly-arrays-basics.md)** covers how arrays
+   sit in memory.
+5. **[assembly-conditionals-and-loops.md](assembly-conditionals-and-loops.md)**
+   covers `if`/`else` and `for` loops as compares, jumps, and labels.
+6. **[assembly-generate-reverse-and-security.md](assembly-generate-reverse-and-security.md)**
+   covers generating assembly with `g++ -S`, reversing assembly back to C++, and
+   code security.
 
 ## The Notes
 
@@ -104,7 +104,7 @@ How `if`/`else` and `for` loops are built from comparisons, jumps, and labels.
 
 ### [assembly-generate-reverse-and-security.md](assembly-generate-reverse-and-security.md)
 
-Going the other direction — producing assembly, reversing it back to C++, and the
+Going the other direction: producing assembly, reversing it back to C++, and the
 security thinking that surrounds it.
 
 - Generating assembly from C++ with `g++ -S` (`Hello.cpp` → `Hello.s`)
@@ -118,8 +118,8 @@ security thinking that surrounds it.
 
 ## Recurring Ideas
 
-- **Address vs value** — `leaq` computes an address; `movl` usually copies a value.
-- **`mov` means copy**, not move — the source is left unchanged.
-- **AT&T order is source, destination** — `movl $2, -12(%rbp)` stores `2` into the slot.
-- **Stack slots** — locals live at negative offsets from `%rbp`; `int`s are 4 bytes apart.
-- **Registers do the math** — values are loaded into registers, combined, then stored back.
+- **Address vs value.** `leaq` computes an address; `movl` usually copies a value.
+- **`mov` means copy**, not move. The source is left unchanged.
+- **AT&T order is source, destination.** `movl $2, -12(%rbp)` stores `2` into the slot.
+- **Stack slots.** Locals live at negative offsets from `%rbp`; `int`s are 4 bytes apart.
+- **Registers do the math.** Values are loaded into registers, combined, then stored back.
